@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Firebase Realtime Database - Client Side</title>
+
+<!-- Import the Ionic CSS -->
+<link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+<!-- Import Ionic -->
+<script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+<!-- Optional, import the Ionic icons -->
+<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD6DacfEsFnJ5Hrpo3q436eyWYupwE8eZM",
+    authDomain: "project-645d5.firebaseapp.com",
+    databaseURL: "https://project-645d5.firebaseio.com",
+    projectId: "project-645d5",
+    storageBucket: "project-645d5.appspot.com",
+    messagingSenderId: "12974012974",
+    appId: "1:12974012974:web:d9d025513f8883c307fdbf",
+    measurementId: "G-LLTBJS2G9L"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+</head>
+<body>
+  <main>
+    <form>
+		<button id="stopButton">Stop</button>
+		<button id="forwardButton">Forward</button>
+		<button id="backwardButton">Backward</button>
+		<button id="rightButton">Right</button>
+		<button id="leftButton">Left</button>
+    </form>
+  </main>
+  <script src="code.js"></script>
+
+  <ion-app>
+    <!-- Cool thing, the Ionic CSS utilities could be used too -->
+    <ion-content text-center>
+      <h1>Controller</h1>
+        <!-- We add an ion-button with an onclick event -->
+		
+		<ion-list>
+			<ion-radio-group>	  
+			  <ion-item>
+				<ion-label>Stop</ion-label>
+				<ion-radio value="stop" onclick="stopButtonClickEvent()"></ion-radio>
+			  </ion-item>
+		  
+			  <ion-item>
+				<ion-label>Forward</ion-label>
+				<ion-radio value="forward" onclick="forwardButtonClickEvent()"></ion-radio>
+			  </ion-item>
+		  
+          <ion-item>
+				<ion-label>Right</ion-label>
+				<ion-radio value="right" onclick="rightButtonClickEvent()"></ion-radio>
+			  </ion-item>
+              
+              <ion-item>
+				<ion-label>Left</ion-label>
+				<ion-radio value="left" onclick="leftButtonClickEvent()"></ion-radio>
+			  </ion-item>
+              
+			  <ion-item>
+				<ion-label>Backward</ion-label>
+				<ion-radio value="backward" onclick="backwardButtonClickEvent()"></ion-radio>
+			  </ion-item>
+			</ion-radio-group>
+		  </ion-list>
+    </ion-content>
+</ion-app>
+</body>
+</html>  
